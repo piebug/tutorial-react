@@ -16,28 +16,26 @@ class Board extends React.Component {
       <Square
         value={this.props.squares[i]}
         onClick={() => this.props.onClick(i)}
+        key={i}
       />
     );
   }
 
   render() {
+    const rows = Array(3).fill(null).map((row, i) => {
+      const squares = Array(3).fill(null).map((square, j) => {
+        return this.renderSquare(j + (3 * i));
+      });
+      return (
+        <div className="board-row" key={i}>
+          {squares}
+        </div>
+      );
+    });
+
     return (
       <div>
-        <div className="board-row">
-          {this.renderSquare(0)}
-          {this.renderSquare(1)}
-          {this.renderSquare(2)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(3)}
-          {this.renderSquare(4)}
-          {this.renderSquare(5)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(6)}
-          {this.renderSquare(7)}
-          {this.renderSquare(8)}
-        </div>
+        {rows}
       </div>
     );
   }
@@ -167,7 +165,6 @@ ReactDOM.render(
 );
 
 /* TODO: list of extra challenges
- *  - rewrite Board to use two loops to make the squares instead of hardcoding them
  *  - add a toggle button that lets you sort the moves in either ascending or descending order
  *  - when someone wins, highlight the three squares that caused the win
  *  - when no one wins, display a message about the result being a draw
