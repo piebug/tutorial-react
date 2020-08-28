@@ -50,6 +50,7 @@ class Game extends React.Component {
       }],
       stepNumber: 0,
       xIsNext: true,
+      reversedMoves: false,
     };
   }
 
@@ -77,12 +78,19 @@ class Game extends React.Component {
     });
   }
 
+  reverseMoves() {
+    const reversed = this.state.reversedMoves
+    this.setState({
+      reversedMoves: !reversed,
+    });
+  }
+
   render() {
     const history = this.state.history;
     const current = history[this.state.stepNumber];
     const winner = calculateWinner(current.squares);
 
-    const moves = history.map((step, move) => {
+    let moves = history.map((step, move) => {
       const previousMove = move ?
         history[move - 1].squares : null;
       const position = determinePosition(previousMove, step.squares);
@@ -97,6 +105,9 @@ class Game extends React.Component {
         </li>
       );
     });
+    if (this.state.reversedMoves) {
+        moves = moves.reverse();
+    }
 
     let status;
     if (winner) {
@@ -115,6 +126,13 @@ class Game extends React.Component {
         </div>
         <div className="game-info">
           <div className="status">{status}</div>
+          <div>
+            <button onClick={() => this.reverseMoves()}>
+              Sort moves in
+              {this.state.reversedMoves ? " ascending " : " descending "}
+              order
+            </button>
+          </div>
           <ol className="moves">{moves}</ol>
         </div>
       </div>
@@ -165,7 +183,6 @@ ReactDOM.render(
 );
 
 /* TODO: list of extra challenges
- *  - add a toggle button that lets you sort the moves in either ascending or descending order
  *  - when someone wins, highlight the three squares that caused the win
  *  - when no one wins, display a message about the result being a draw
  *
