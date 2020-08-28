@@ -85,8 +85,12 @@ class Game extends React.Component {
     const winner = calculateWinner(current.squares);
 
     const moves = history.map((step, move) => {
+      const previousMove = move ?
+        history[move - 1].squares : null;
+      const position = determinePosition(previousMove, step.squares);
       const desc = move ?
-        'Go to move #' + move : 'Go to game start';
+        'Go to move #' + move + ' ' + position : 'Go to game start';
+
       return (
         <li key={move}>
           <button onClick={() => this.jumpTo(move)}>{desc}</button>
@@ -138,6 +142,21 @@ function calculateWinner(squares) {
   return null;
 }
 
+function determinePosition(oldSquares, newSquares) {
+  let newSquare;
+  for (let i = 0; i < newSquares.length; i++) {
+      if ((!oldSquares && newSquares[i]) || (oldSquares && (oldSquares[i] !== newSquares[i]))) {
+          newSquare = i;
+          break
+      }
+  }
+  if (newSquare === null) {  return ''; }
+
+  const row = parseInt(newSquare / 3) + 1;
+  const col = (newSquare % 3) + 1;
+  return '(' + col + ', ' + row + ')';
+}
+
 // ========================================
 
 ReactDOM.render(
@@ -146,7 +165,6 @@ ReactDOM.render(
 );
 
 /* TODO: list of extra challenges
- *  - display the location for each move in the format (col, row) in the move history list
  *  - bold the currently selected item in the move list
  *  - rewrite Board to use two loops to make the squares instead of hardcoding them
  *  - add a toggle button that lets you sort the moves in either ascending or descending order
