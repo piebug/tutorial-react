@@ -117,8 +117,10 @@ class Game extends React.Component {
     let status;
     if (winner) {
       status = 'Winner: ' + winner.player;
-    } else {
+    } else if (this.state.stepNumber < 9) {
       status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+    } else {
+      status = "Draw"
     }
 
     return (
@@ -191,10 +193,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-/* TODO: list of extra challenges
- *  - when no one wins, display a message about the result being a draw
- *
- * TODO: my ideas for improvements
+/* TODO: my ideas for improvements
  *  - improve the overall styling using Bootstrap
  *  - add the ability to toggle between light and dark mode
  *  - add the ReactJS logo gif to the page
