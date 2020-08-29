@@ -2,6 +2,7 @@
 
 body {
   font: 16px "Open Sans", sans-serif;
+  color: #1A202C;
 }
 
 button {
@@ -17,8 +18,10 @@ h1 {
 }
 
 h2 {
+  color: #FC8181;
   font-weight: 800;
-  text-transform: uppercase;
+  font-size: 1.75em;
+  text-transform: lowercase;
 }
 
 .board-row:after {
@@ -32,7 +35,7 @@ h2 {
   font-size: 4em;
   font-weight: bold;
   background: #fff;
-  border: 2px solid #999;
+  border: 2px solid #E2E8F0;
   float: left;
   line-height: 5.5rem;
   height: 5.5rem;
@@ -52,13 +55,60 @@ h2 {
 }
 
 .square.winner {
-  background-color: yellow;
+  background-color: #E6FFFA;
+  color: #38B2AC;
 }
 
 .move.current {
   font-weight: bold;
 }
 
+ol.moves {
+  list-style: none;
+  counter-reset: li;
+}
+ol.moves > li::before {
+  content: counter(li);
+  color: #CBD5E0;
+  font-size: 1.5em;
+  display: inline-block;
+  width: 1.5em;
+  margin-left: -1.5em;
+  margin-right: 0.5em;
+  text-align: right;
+  direction: rtl;
+}
+ol.moves > li {
+  counter-increment: li;
+}
+
 .btn {
   border-radius: 0;
+}
+
+.btn.btn-outline-info {
+  color: #1A202C;
+  border: 3px solid #B2F5EA;
+}
+.btn.btn-outline-info:hover {
+  color: #1A202C;
+  border-color: #B2F5EA;
+  background-color: #B2F5EA;
+}
+.btn.btn-outline-info:active:focus {
+  color: #1A202C;
+  border-color: #B2F5EA;
+  background-color: #E6FFFA;
+}
+.btn.btn-outline-info:disabled {
+  color: #F56565;
+  border-color: #E2E8F0;
+}
+.btn.btn-outline-info:disabled:hover {
+  background: none;
+}
+
+.sort.btn:hover {
+  background: none;
+  text-decoration: solid underline #B2F5EA 3px;
 }
