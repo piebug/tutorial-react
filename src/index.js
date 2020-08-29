@@ -4,7 +4,10 @@ import './index.css';
 
 function Square(props) {
   return (
-    <button className={props.className} onClick={props.onClick}>
+    <button
+      className={"square" + (props.isWinner ? " winner" : "")}
+      onClick={props.onClick}
+    >
       {props.value}
     </button>
   );
@@ -12,15 +15,11 @@ function Square(props) {
 
 class Board extends React.Component {
   renderSquare(i) {
-    let className = "square";
-    if (this.props.winningSquares && this.props.winningSquares.includes(i)) {
-      className += " winner";
-    }
     return (
       <Square
         value={this.props.squares[i]}
         onClick={() => this.props.onClick(i)}
-        className={className}
+        isWinner={(this.props.winningSquares && this.props.winningSquares.includes(i))}
         key={i}
       />
     );
@@ -46,6 +45,106 @@ class Board extends React.Component {
   }
 }
 
+function MovePosition(props) {
+  if (!props.col || !props.row) {
+    return null;
+  }
+  return (
+    <span className="move-position">
+      ({props.col}, {props.row})
+    </span>
+  );
+}
+
+class Move extends React.Component {
+  renderPosition() {
+    return (
+      <MovePosition
+        col={this.props.position ? this.props.position.col : null}
+        row={this.props.position ? this.props.position.row : null}
+      />
+    );
+  }
+
+  render() {
+    const position = this.renderPosition();
+    let desc = this.props.move ?
+      'move #' + this.props.move :
+      'game start';
+    desc = this.props.isCurrent ?
+      desc[0].toUpperCase() + desc.slice(1) :
+      "Go to " + desc;
+
+    return (
+      <button
+        className={"move" + (this.props.isCurrent ? " current" : "")}
+        disabled={this.props.isCurrent}
+        onClick={this.props.onClick}
+      >
+        {desc} {position}
+      </button>
+    );
+  }
+}
+
+class MoveList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      reversed: false,
+    };
+  }
+
+  reverseMoves() {
+    const reversed = this.state.reversed;
+    this.setState({
+      reversed: !reversed,
+    });
+  }
+
+  renderMove(move, position) {
+    return (
+      <Move
+        move={move}
+        position={position}
+        isCurrent={(this.props.currentMove === move)}
+        onClick={() => this.props.onClick(move)}
+      />
+    );
+  }
+
+  render() {
+    const history = this.props.history;
+    let moves = history.map((step, move) => {
+      const previousMove = move ?
+        history[move - 1].squares : null;
+      const position = determinePosition(previousMove, step.squares);
+
+      return (
+        <li key={move}>
+          {this.renderMove(move, position)}
+        </li>
+      );
+    });
+    if (this.state.reversed) {
+      moves = moves.reverse();
+    }
+
+    return (
+      <div>
+        <ol className="moves">{moves}</ol>
+        <div>
+          <button onClick={() => this.reverseMoves()}>
+            Sort moves in
+            {this.state.reversed ? " ascending " : " descending "}
+            order
+          </button>
+        </div>
+      </div>
+    );
+  }
+}
+
 class Game extends React.Component {
   constructor(props) {
     super(props);
@@ -55,7 +154,6 @@ class Game extends React.Component {
       }],
       stepNumber: 0,
       xIsNext: true,
-      reversedMoves: false,
     };
   }
 
@@ -83,36 +181,10 @@ class Game extends React.Component {
     });
   }
 
-  reverseMoves() {
-    const reversed = this.state.reversedMoves
-    this.setState({
-      reversedMoves: !reversed,
-    });
-  }
-
   render() {
     const history = this.state.history;
     const current = history[this.state.stepNumber];
     const winner = calculateWinner(current.squares);
-
-    let moves = history.map((step, move) => {
-      const previousMove = move ?
-        history[move - 1].squares : null;
-      const position = determinePosition(previousMove, step.squares);
-      const className = (this.state.stepNumber === move) ?
-        "current-move" : "move";
-      const desc = move ?
-        'Go to move #' + move + ' ' + position : 'Go to game start';
-
-      return (
-        <li key={move}>
-          <button className={className} onClick={() => this.jumpTo(move)}>{desc}</button>
-        </li>
-      );
-    });
-    if (this.state.reversedMoves) {
-        moves = moves.reverse();
-    }
 
     let status;
     if (winner) {
@@ -126,6 +198,7 @@ class Game extends React.Component {
     return (
       <div className="game">
         <div className="game-board">
+          <h2 className="status">{status}</h2>
           <Board
             squares={current.squares}
             winningSquares={winner ? winner.move : null}
@@ -133,15 +206,12 @@ class Game extends React.Component {
           />
         </div>
         <div className="game-info">
-          <div className="status">{status}</div>
-          <div>
-            <button onClick={() => this.reverseMoves()}>
-              Sort moves in
-              {this.state.reversedMoves ? " ascending " : " descending "}
-              order
-            </button>
-          </div>
-          <ol className="moves">{moves}</ol>
+          <h2>Move History</h2>
+          <MoveList
+            history={this.state.history}
+            currentMove={this.state.stepNumber}
+            onClick={(move) => this.jumpTo(move)}
+          />
         </div>
       </div>
     );
@@ -174,16 +244,19 @@ function calculateWinner(squares) {
 function determinePosition(oldSquares, newSquares) {
   let newSquare;
   for (let i = 0; i < newSquares.length; i++) {
-      if ((!oldSquares && newSquares[i]) || (oldSquares && (oldSquares[i] !== newSquares[i]))) {
-          newSquare = i;
-          break
-      }
+    if ((!oldSquares && newSquares[i]) || (oldSquares && (oldSquares[i] !== newSquares[i]))) {
+      newSquare = i;
+      break;
+    }
   }
-  if (newSquare === null) {  return ''; }
+  if (newSquare === null) { return null; }
 
   const row = parseInt(newSquare / 3) + 1;
   const col = (newSquare % 3) + 1;
-  return '(' + col + ', ' + row + ')';
+  return {
+    col: col,
+    row: row,
+  };
 }
 
 // ========================================
