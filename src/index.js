@@ -77,7 +77,7 @@ class Move extends React.Component {
 
     return (
       <button
-        className={"move" + (this.props.isCurrent ? " current" : "")}
+        className={"btn btn-primary move" + (this.props.isCurrent ? " current" : "")}
         disabled={this.props.isCurrent}
         onClick={this.props.onClick}
       >
@@ -121,7 +121,7 @@ class MoveList extends React.Component {
       const position = determinePosition(previousMove, step.squares);
 
       return (
-        <li key={move}>
+        <li key={move} className="my-2">
           {this.renderMove(move, position)}
         </li>
       );
@@ -133,8 +133,8 @@ class MoveList extends React.Component {
     return (
       <div>
         <ol className="moves">{moves}</ol>
-        <div>
-          <button onClick={() => this.reverseMoves()}>
+        <div className="d-flex justify-content-end">
+          <button className="btn btn-outline-secondary btn-sm sort" onClick={() => this.reverseMoves()}>
             Sort moves in
             {this.state.reversed ? " ascending " : " descending "}
             order
@@ -190,28 +190,31 @@ class Game extends React.Component {
     if (winner) {
       status = 'Winner: ' + winner.player;
     } else if (this.state.stepNumber < 9) {
-      status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+      status = 'Next Player: ' + (this.state.xIsNext ? 'X' : 'O');
     } else {
       status = "Draw"
     }
 
     return (
-      <div className="game">
-        <div className="game-board">
-          <h2 className="status">{status}</h2>
-          <Board
-            squares={current.squares}
-            winningSquares={winner ? winner.move : null}
-            onClick={(i) => this.handleClick(i)}
-          />
-        </div>
-        <div className="game-info">
-          <h2>Move History</h2>
-          <MoveList
-            history={this.state.history}
-            currentMove={this.state.stepNumber}
-            onClick={(move) => this.jumpTo(move)}
-          />
+      <div className="game container-fluid p-md-5 p-3">
+        <h1 className="px-lg-5 py-2">Tic-Tac-Toe</h1>
+        <div className="row px-lg-5 py-3">
+          <div className="game-board col-12 col-md py-3">
+            <h2 className="status">{status}</h2>
+            <Board
+              squares={current.squares}
+              winningSquares={winner ? winner.move : null}
+              onClick={(i) => this.handleClick(i)}
+            />
+          </div>
+          <div className="game-info col-12 col-md py-3">
+            <h2>Moves</h2>
+            <MoveList
+              history={this.state.history}
+              currentMove={this.state.stepNumber}
+              onClick={(move) => this.jumpTo(move)}
+            />
+          </div>
         </div>
       </div>
     );
