@@ -1,22 +1,26 @@
 {
   "files": {
-    "main.css": "/tutorial-react/static/css/main.e23b4ade.chunk.css",
-    "main.js": "/tutorial-react/static/js/main.2782eb12.chunk.js",
-    "main.js.map": "/tutorial-react/static/js/main.2782eb12.chunk.js.map",
+    "main.css": "/tutorial-react/static/css/main.c3090a1c.chunk.css",
+    "main.js": "/tutorial-react/static/js/main.ecb4ba17.chunk.js",
+    "main.js.map": "/tutorial-react/static/js/main.ecb4ba17.chunk.js.map",
     "runtime-main.js": "/tutorial-react/static/js/runtime-main.4b9bd8d2.js",
     "runtime-main.js.map": "/tutorial-react/static/js/runtime-main.4b9bd8d2.js.map",
-    "static/js/2.eb3c6d82.chunk.js": "/tutorial-react/static/js/2.eb3c6d82.chunk.js",
-    "static/js/2.eb3c6d82.chunk.js.map": "/tutorial-react/static/js/2.eb3c6d82.chunk.js.map",
+    "static/js/2.ad6fe3ff.chunk.js": "/tutorial-react/static/js/2.ad6fe3ff.chunk.js",
+    "static/js/2.ad6fe3ff.chunk.js.map": "/tutorial-react/static/js/2.ad6fe3ff.chunk.js.map",
     "index.html": "/tutorial-react/index.html",
-    "precache-manifest.9890961f1b56a3160e45b2f077037906.js": "/tutorial-react/precache-manifest.9890961f1b56a3160e45b2f077037906.js",
+    "precache-manifest.cbfceaba62e539171e59779f2e2dddd0.js": "/tutorial-react/precache-manifest.cbfceaba62e539171e59779f2e2dddd0.js",
     "service-worker.js": "/tutorial-react/service-worker.js",
-    "static/css/main.e23b4ade.chunk.css.map": "/tutorial-react/static/css/main.e23b4ade.chunk.css.map",
-    "static/js/2.eb3c6d82.chunk.js.LICENSE.txt": "/tutorial-react/static/js/2.eb3c6d82.chunk.js.LICENSE.txt"
+    "static/css/main.c3090a1c.chunk.css.map": "/tutorial-react/static/css/main.c3090a1c.chunk.css.map",
+    "static/js/2.ad6fe3ff.chunk.js.LICENSE.txt": "/tutorial-react/static/js/2.ad6fe3ff.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/tutorial-react/static/media/logo.1492db19.svg",
+    "static/media/tic-tac-toe.svg": "/tutorial-react/static/media/tic-tac-toe.32c0e7d3.svg",
+    "static/media/tic-tac.svg": "/tutorial-react/static/media/tic-tac.fa64c08d.svg",
+    "static/media/toe.svg": "/tutorial-react/static/media/toe.043f46d5.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.4b9bd8d2.js",
-    "static/js/2.eb3c6d82.chunk.js",
-    "static/css/main.e23b4ade.chunk.css",
-    "static/js/main.2782eb12.chunk.js"
+    "static/js/2.ad6fe3ff.chunk.js",
+    "static/css/main.c3090a1c.chunk.css",
+    "static/js/main.ecb4ba17.chunk.js"
   ]
 }
