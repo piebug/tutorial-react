@@ -45,15 +45,12 @@ h2 {
   text-align: center;
   width: 5.5rem;
 }
-
 .square:focus {
   outline: none;
 }
-
 .kbd-navigation .square:focus {
   background: #ddd;
 }
-
 .square.winner {
   background-color: #E6FFFA;
   color: #38B2AC;
@@ -61,6 +58,9 @@ h2 {
 
 .move.current {
   font-weight: bold;
+}
+.move-position {
+  font-weight: 300;
 }
 
 ol.moves {
@@ -85,7 +85,6 @@ ol.moves > li {
 .btn {
   border-radius: 0;
 }
-
 .btn.btn-outline-info {
   color: #1A202C;
   border: 3px solid #B2F5EA;
