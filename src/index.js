@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Game from './Game.js'
-import logo from './static/logo.svg';
-import toe from './static/toe.svg';
-import tictac from './static/tic-tac.svg';
-import tictactoe from './static/tic-tac-toe.svg';
+import logo from './images/logo.svg';
+import toe from './images/toe.svg';
+import tictac from './images/tic-tac.svg';
+import tictactoe from './images/tic-tac-toe.svg';
 import './index.scss';
 
 function ReactLogo(props) {
