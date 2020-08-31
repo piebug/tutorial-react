@@ -1,7 +1,7 @@
 import React from 'react';
 import Board from "./Board.js"
 import MoveList from "./MoveList.js"
-import './index.css';
+import './index.scss';
 
 class Game extends React.Component {
   constructor(props) {
