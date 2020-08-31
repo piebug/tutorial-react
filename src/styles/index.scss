@@ -178,6 +178,11 @@ ol.moves > li {
 .toe {
   height: 10vh;
 }
+.tic-tac-toe,
+.tic-tac,
+.toe {
+  filter: invert(100%) sepia(5%) saturate(0%) hue-rotate(137deg) brightness(116%) contrast(100%);
+}
 
 .react-home {
   color: $primary4;
