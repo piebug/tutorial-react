@@ -4,6 +4,7 @@
 body {
   font: 16px "Open Sans", sans-serif;
   color: $textColor;
+  background-color: $bgColor;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -89,7 +90,8 @@ a.navbar-brand:hover {
   font-family: 'Permanent Marker', sans-serif;
   font-size: 4em;
   font-weight: bold;
-  background: #fff;
+  color: $textColor;
+  background: $bgColor;
   border: 2px solid $neutral3;
   float: left;
   line-height: 5.5rem;
