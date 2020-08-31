@@ -1,5 +1,4 @@
 import React from 'react';
-import './index.scss';
 
 function MovePosition(props) {
   if (!props.col || !props.row) {

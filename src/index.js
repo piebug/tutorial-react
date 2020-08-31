@@ -5,7 +5,7 @@ import logo from './images/logo.svg';
 import toe from './images/toe.svg';
 import tictac from './images/tic-tac.svg';
 import tictactoe from './images/tic-tac-toe.svg';
-import './index.scss';
+import './styles/index.scss';
 
 function ReactLogo(props) {
   return (
