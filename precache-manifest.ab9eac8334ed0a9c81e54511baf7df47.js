@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "83790a9ed13cf4956a51540a02e6eb9e",
+    "revision": "8fb6709d1a117b1f2973773459424ba6",
     "url": "/tutorial-react/index.html"
   },
   {
-    "revision": "9360e74f21e14471a00f",
-    "url": "/tutorial-react/static/css/main.ce933499.chunk.css"
+    "revision": "a2472cab19aa3309395c",
+    "url": "/tutorial-react/static/css/main.9a5c40c4.chunk.css"
   },
   {
     "revision": "e6e310dd5ade4b63af58",
@@ -16,16 +16,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/tutorial-react/static/js/2.507031c6.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "9360e74f21e14471a00f",
-    "url": "/tutorial-react/static/js/main.09e90ad4.chunk.js"
+    "revision": "a2472cab19aa3309395c",
+    "url": "/tutorial-react/static/js/main.cec909aa.chunk.js"
   },
   {
     "revision": "682edddca3f6012c4544",
     "url": "/tutorial-react/static/js/runtime-main.4b9bd8d2.js"
   },
   {
-    "revision": "1492db193706b60b30fdc64eadbafc1c",
-    "url": "/tutorial-react/static/media/logo.1492db19.svg"
+    "revision": "9853abaa0ee670ecd3055f51bc8b12a9",
+    "url": "/tutorial-react/static/media/logo.9853abaa.svg"
   },
   {
     "revision": "32c0e7d36845432e9988825494c66952",
