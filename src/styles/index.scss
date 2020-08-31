@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Unica+One&family=Open+Sans:wght@300;400;600;700;800&family=Permanent+Marker&display=swap');
-@import './colors.scss'; 
+@import './colors.scss';
 
 body {
   font: 16px "Open Sans", sans-serif;
-  color: #1A202C;
+  color: $textColor;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -17,11 +17,11 @@ button:disabled {
 
 a {
   color: inherit;
-  text-decoration: solid underline #B2F5EA 3px;
+  text-decoration: solid underline $primary2 3px;
 }
 a:hover {
-  color: #4FD1C5;
-  text-decoration: solid underline #B2F5EA 3px;
+  color: $primary4;
+  text-decoration: solid underline $primary2 3px;
 }
 
 h1 {
@@ -31,7 +31,7 @@ h1 {
 
 h2,
 .made-by {
-  color: #FC8181;
+  color: $accent1;
   font-weight: 800;
   font-size: 1.75em;
   text-transform: lowercase;
@@ -44,20 +44,20 @@ a.navbar-brand {
   text-decoration: none;
 }
 a.navbar-brand:hover {
-  text-decoration: solid underline #B2F5EA 3px;
+  text-decoration: solid underline $primary2 3px;
 }
 .navbar-brand {
-  color: #1A202C !important;
+  color: $textColor !important;
   font-weight: 800;
   font-size: 1.5em;
 }
 .react-js {
-  color: #4FD1C5;
+  color: $primary4;
 }
 
 .header {
   /* border-bottom: 1px solid #1A202C; */
-  border-bottom: 1px solid #E2E8F0;
+  border-bottom: 1px solid $neutral3;
 }
 
 #root {
@@ -72,7 +72,7 @@ a.navbar-brand:hover {
 
 .footer {
   /* border-top: 1px solid #1A202C; */
-  background-color: #F7FAFC;
+  background-color: $neutral1;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -90,7 +90,7 @@ a.navbar-brand:hover {
   font-size: 4em;
   font-weight: bold;
   background: #fff;
-  border: 2px solid #E2E8F0;
+  border: 2px solid $neutral3;
   float: left;
   line-height: 5.5rem;
   height: 5.5rem;
@@ -107,8 +107,8 @@ a.navbar-brand:hover {
   background: #ddd;
 }
 .square.winner {
-  background-color: #E6FFFA;
-  color: #38B2AC;
+  background-color: $primary1;
+  color: $primary5;
 }
 
 .move.current {
@@ -124,7 +124,7 @@ ol.moves {
 }
 ol.moves > li::before {
   content: counter(li);
-  color: #CBD5E0;
+  color: $neutral4;
   font-size: 1.5em;
   display: inline-block;
   width: 1.5em;
@@ -141,22 +141,22 @@ ol.moves > li {
   border-radius: 0;
 }
 .btn.btn-outline-info {
-  color: #1A202C;
-  border: 3px solid #B2F5EA;
+  color: $textColor;
+  border: 3px solid $primary2;
 }
 .btn.btn-outline-info:hover {
-  color: #1A202C;
-  border-color: #B2F5EA;
-  background-color: #B2F5EA;
+  color: $textColor;
+  border-color: $primary2;
+  background-color: $primary2;
 }
 .btn.btn-outline-info:active:focus {
-  color: #1A202C;
-  border-color: #B2F5EA;
-  background-color: #E6FFFA;
+  color: $textColor;
+  border-color: $primary2;
+  background-color: $primary1;
 }
 .btn.btn-outline-info:disabled {
-  color: #F56565;
-  border-color: #E2E8F0;
+  color: $accent2;
+  border-color: $neutral3;
 }
 .btn.btn-outline-info:disabled:hover {
   background: none;
@@ -164,7 +164,7 @@ ol.moves > li {
 
 .sort.btn:hover {
   background: none;
-  text-decoration: solid underline #B2F5EA 3px;
+  text-decoration: solid underline $primary2 3px;
 }
 
 .tic-tac-toe {
@@ -178,14 +178,14 @@ ol.moves > li {
 }
 
 .react-home {
-  color: #4FD1C5;
+  color: $primary4;
   font-weight: 800;
   font-size: 1.25em;
   text-decoration: none;
 }
 .react-home:hover {
-  color: #38B2AC;
-  text-decoration: solid underline #81E6D9 3px;
+  color: $primary5;
+  text-decoration: solid underline $primary3 3px;
 }
 
 /* Logo animation CSS */
