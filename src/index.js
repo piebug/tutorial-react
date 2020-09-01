@@ -91,23 +91,57 @@ function Header(props) {
     <header className="header px-md-5 px-3 py-2">
       <nav className="navbar navbar-light px-lg-5">
         <NavbarIcon />
+        <div className="custom-control custom-checkbox">
+          <button
+            className="btn btn-outline-primary btn-sm"
+            onClick={props.onClick}
+          >
+            {props.theme} mode
+          </button>
+        </div>
       </nav>
     </header>
   );
 }
 
 class Page extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isDefaultTheme: true,
+    };
+  }
+
+  handleThemeChange() {
+    this.setState({
+      isDefaultTheme: !this.state.isDefaultTheme,
+    });
+  }
+
   render () {
+    const theme = this.state.isDefaultTheme ?
+      themes.default : themes.dark;
+    const themeOption = this.state.isDefaultTheme ?
+      themes.dark : themes.default;
+
     return (
-      <div className="theme--default">
+      <div className={"theme--" + theme}>
         <div className="page">
-          <Header />
+          <Header
+            onClick={() => this.handleThemeChange()}
+            theme={themeOption}
+          />
           <Game />
           <Footer />
         </div>
       </div>
     );
   }
+}
+
+const themes = {
+  default: "default",
+  dark: "dark",
 }
 
 // ========================================
@@ -118,5 +152,6 @@ ReactDOM.render(
 );
 
 /* TODO: my ideas for improvements
- *  - add the ability to toggle between light and dark mode
+ *  - change theme toggle to use a switch
+ *  - add collapsible functionality to navbar
  */
