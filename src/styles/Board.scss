@@ -26,16 +26,16 @@
     background-color: t('bgColor');
     border: 2px solid t('neutral3');
   }
-}
 
-.square:focus {
-  outline: none;
-}
-
-.square.winner {
-  @include themed() {
-    color: t('primary5');
-    background-color: t('primary1');
+  &:focus {
+    outline: none;
+  }
+  
+  &.winner {
+    @include themed() {
+      color: t('primary5');
+      background-color: t('primary1');
+    }
   }
 }
 
