@@ -1,0 +1,33 @@
+@import './_colors.scss';
+
+.move.current {
+  font-weight: bold;
+}
+
+.move-position {
+  font-weight: 300;
+}
+
+ol.moves {
+  list-style: none;
+  counter-reset: li;
+
+  & > li::before {
+    content: counter(li);
+    font-size: 1.5em;
+    display: inline-block;
+    width: 1.5em;
+    margin-left: -1.5em;
+    margin-right: 0.5em;
+    text-align: right;
+    direction: rtl;
+
+    @include themed() {
+      color: t('neutral4');
+    }
+  }
+
+  & > li {
+    counter-increment: li;
+  }
+}

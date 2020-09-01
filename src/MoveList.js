@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles/MoveList.scss';
 
 function MovePosition(props) {
   if (!props.col || !props.row) {
@@ -32,7 +33,7 @@ class Move extends React.Component {
 
     return (
       <button
-        className={"btn btn-outline-info move px-2 py-1 mx-2" + (this.props.isCurrent ? " current" : "")}
+        className={"move btn btn-outline-primary px-2 py-1 mx-2" + (this.props.isCurrent ? " current" : "")}
         disabled={this.props.isCurrent}
         onClick={this.props.onClick}
       >
@@ -90,7 +91,7 @@ class MoveList extends React.Component {
         <ol className="moves pl-3">{moves}</ol>
         <div className="d-flex justify-content-end">
           <button
-            className="btn btn-outline-info btn-sm border-0 px-1 py-0 sort"
+            className="btn btn-outline-primary btn-sm btn-subtle border-0 px-1 py-0"
             onClick={() => this.reverseMoves()}
           >
             Sort moves in
