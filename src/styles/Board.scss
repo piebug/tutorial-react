@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import './_colors.scss';
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.square {
+  font-family: 'Permanent Marker', sans-serif;
+  font-size: 4em;
+  font-weight: bold;
+  float: left;
+  line-height: 5.5rem;
+  height: 5.5rem;
+  margin-right: -2px;
+  margin-top: -2px;
+  padding: 0;
+  text-align: center;
+  width: 5.5rem;
+  cursor: pointer;
+
+  @include themed() {
+    color: t('textColor');
+    background-color: t('bgColor');
+    border: 2px solid t('neutral3');
+  }
+}
+
+.square:focus {
+  outline: none;
+}
+
+.square.winner {
+  @include themed() {
+    color: t('primary5');
+    background-color: t('primary1');
+  }
+}
+
+.kbd-navigation .square:focus {
+  background: #ddd;
+}
