@@ -21,8 +21,8 @@ function ReactLogo(props) {
 function PillToeIcons(props) {
   return (
     <div>
-      <img src={tictac} className="tic-tac" alt="tic-tac" />
-      <img src={toe} className="toe" alt="toe" />
+      <img src={tictac} className="tic-tac line-icon" alt="tic-tac" />
+      <img src={toe} className="toe line-icon" alt="toe" />
     </div>
   );
 }
@@ -76,7 +76,7 @@ function NavbarIcon(props) {
     >
       <img
         src={tictactoe}
-        className="tic-tac-toe d-inline-block align-center mr-2"
+        className="tic-tac-toe line-icon d-inline-block align-center mr-2"
         alt="tic-tac-toe"
       />
       <span className="d-none d-md-inline">
@@ -99,10 +99,12 @@ function Header(props) {
 class Page extends React.Component {
   render () {
     return (
-      <div className="page">
-        <Header />
-        <Game />
-        <Footer />
+      <div className="theme--default">
+        <div className="page">
+          <Header />
+          <Game />
+          <Footer />
+        </div>
       </div>
     );
   }

@@ -1,204 +1,188 @@
-@import url('https://fonts.googleapis.com/css2?family=Unica+One&family=Open+Sans:wght@300;400;600;700;800&family=Permanent+Marker&display=swap');
-@import './colors.scss';
-
-body {
-  font: 16px "Open Sans", sans-serif;
-  color: $textColor;
-  background-color: $bgColor;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-button {
-  cursor: pointer;
-}
-button:disabled {
-  cursor: auto;
-}
-
-a {
-  color: inherit;
-  text-decoration: solid underline $primary2 3px;
-}
-a:hover {
-  color: $primary4;
-  text-decoration: solid underline $primary2 3px;
-}
-
-h1 {
-  font-family: 'Unica One', cursive;
-  font-size: 4em;
-}
-
-h2,
-.made-by {
-  color: $accent1;
-  font-weight: 800;
-  font-size: 1.75em;
-  text-transform: lowercase;
-}
-.made-by {
-  font-size: 1.25rem;
-}
-
-a.navbar-brand {
-  text-decoration: none;
-}
-a.navbar-brand:hover {
-  text-decoration: solid underline $primary2 3px;
-}
-.navbar-brand {
-  color: $textColor !important;
-  font-weight: 800;
-  font-size: 1.5em;
-}
-.react-js {
-  color: $primary4;
-}
-
-.header {
-  /* border-bottom: 1px solid #1A202C; */
-  border-bottom: 1px solid $neutral3;
-}
+@import url('https://fonts.googleapis.com/css2?family=Unica+One&family=Open+Sans:wght@300;400;600;700;800&display=swap');
+@import './_colors.scss';
 
 #root {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   position: relative;
   min-height: 100vh;
 }
 
+@mixin react-color {
+  @include themed() {
+    color: t('primary4');
+  }
+}
+
 .page {
-  /* for Bootstrap4 xs breakpoints and up */
+  // Mobile-first sizing
   padding-bottom: 48vh;
+  font: 16px "Open Sans", sans-serif;
+
+  h1 {
+    font-family: 'Unica One', cursive;
+    font-size: 5.5em;
+  }
+
+  h2 {
+    font-weight: 800;
+    font-size: 1.75em;
+    text-transform: lowercase;
+  }
+
+  @include themed() {
+    color: t('textColor');
+    background-color: t('bgColor');
+
+    h2 {
+      color: t('accent1');
+    }
+
+    a {
+      color: t('textColor');
+      text-decoration: solid underline t('primary2') 3px;
+
+      &:hover {
+        color: t('primary4');
+        text-decoration: solid underline t('primary2') 3px;
+      }
+    }
+  }
+}
+
+.header {
+  a.navbar-brand {
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.5em;
+  }
+
+  @include themed() {
+    border-bottom: 1px solid t('neutral3');
+
+    a.navbar-brand {
+      color: t('textColor');
+
+      &:hover {
+        text-decoration: solid underline t('primary2') 3px;
+      }
+    }
+  }
 }
 
 .footer {
-  /* border-top: 1px solid #1A202C; */
-  background-color: $neutral1;
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 48vh;
+
+  a.react-home {
+    @include react-color;
+    font-weight: 800;
+    font-size: 1.25em;
+    text-decoration: none;
+  }
+
+  @include themed() {
+    background-color: t('neutral1');
+
+    a.react-home:hover {
+      text-decoration: solid underline t('primary3') 3px;
+    }
+  }
 }
 
-.board-row:after {
-  clear: both;
-  content: "";
-  display: table;
+/* Bootstrap --md breakpoint */
+@media (min-width: 768px) {
+  .page {
+    padding-bottom: 28vh;
+  }
+  .footer {
+    height: 28vh;
+  }
 }
 
-.square {
-  font-family: 'Permanent Marker', sans-serif;
-  font-size: 4em;
-  font-weight: bold;
-  color: $textColor;
-  background: $bgColor;
-  border: 2px solid $neutral3;
-  float: left;
-  line-height: 5.5rem;
-  height: 5.5rem;
-  margin-right: -2px;
-  margin-top: -2px;
-  padding: 0;
-  text-align: center;
-  width: 5.5rem;
-}
-.square:focus {
-  outline: none;
-}
-.kbd-navigation .square:focus {
-  background: #ddd;
-}
-.square.winner {
-  background-color: $primary1;
-  color: $primary5;
+h2.made-by {
+  font-size: 1.25rem;
 }
 
-.move.current {
-  font-weight: bold;
-}
-.move-position {
-  font-weight: 300;
+.react-js {
+  @include react-color;
 }
 
-ol.moves {
-  list-style: none;
-  counter-reset: li;
-}
-ol.moves > li::before {
-  content: counter(li);
-  color: $neutral4;
-  font-size: 1.5em;
-  display: inline-block;
-  width: 1.5em;
-  margin-left: -1.5em;
-  margin-right: 0.5em;
-  text-align: right;
-  direction: rtl;
-}
-ol.moves > li {
-  counter-increment: li;
-}
-
-.btn {
+.btn.btn-outline-primary {
   border-radius: 0;
-}
-.btn.btn-outline-info {
-  color: $textColor;
-  border: 3px solid $primary2;
-}
-.btn.btn-outline-info:hover {
-  color: $textColor;
-  border-color: $primary2;
-  background-color: $primary2;
-}
-.btn.btn-outline-info:active:focus {
-  color: $textColor;
-  border-color: $primary2;
-  background-color: $primary1;
-}
-.btn.btn-outline-info:disabled {
-  color: $accent2;
-  border-color: $neutral3;
-}
-.btn.btn-outline-info:disabled:hover {
-  background: none;
+
+  @include themed() {
+    border: 3px solid t('primary2');
+    color: t('textColor');
+
+    &:focus,
+    &.focus {
+      outline: 0;
+      box-shadow: 0 0 0 .2rem rgba(t('primary2'), .5);
+    }
+
+    // Disabled comes first so active can properly restyle
+    &.disabled,
+    &:disabled {
+      color: t('accent2');
+      border-color: t('neutral3');
+    }
+
+    &:not(:disabled):not(.disabled),
+    &:not(:disabled):not(.disabled) {
+      cursor: pointer;
+      color: t('textColor');
+      border-color: t('primary2');
+
+      &:hover {
+        background-color: t('primary2');
+      }
+
+      &.btn-subtle:hover {
+        background: none;
+        text-decoration: solid underline t('primary2') 3px;
+      }
+
+      &:active,
+      &.active {
+        background-color: t('primary1');
+
+        &:focus {
+          box-shadow: 0 0 0 .2rem rgba(t('primary2'), .5);
+        }
+      }
+    }
+  }
 }
 
-.sort.btn:hover {
-  background: none;
-  text-decoration: solid underline $primary2 3px;
+.line-icon {
+  @include themed() {
+    filter: t('lineIconFilter')
+  }
 }
 
 .tic-tac-toe {
   height: 7vh;
 }
+
 .tic-tac {
   height: 8vh;
 }
+
 .toe {
   height: 10vh;
-}
-.tic-tac-toe,
-.tic-tac,
-.toe {
-  filter: invert(100%) sepia(5%) saturate(0%) hue-rotate(137deg) brightness(116%) contrast(100%);
-}
-
-.react-home {
-  color: $primary4;
-  font-weight: 800;
-  font-size: 1.25em;
-  text-decoration: none;
-}
-.react-home:hover {
-  color: $primary5;
-  text-decoration: solid underline $primary3 3px;
 }
 
 /* Logo animation CSS */
 .logo {
   height: 10vh;
   pointer-events: none;
+
+  @include themed() {
+    filter: t('logoFilter')
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -213,15 +197,5 @@ ol.moves > li {
   }
   to {
     transform: rotate(360deg);
-  }
-}
-
-/* Bootstrap4 md breakpoint */
-@media (min-width: 768px) {
-  .page {
-    padding-bottom: 28vh;
-  }
-  .footer {
-    height: 28vh;
   }
 }

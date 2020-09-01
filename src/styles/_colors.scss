@@ -1,0 +1,55 @@
+// Default theme is light mode
+$themes: (
+  default: (
+    textColor: #1A202C,
+    bgColor: #ffffff,
+    accent1: #FC8181,
+    accent2: #F56565,
+    primary1: #E6FFFA,
+    primary2: #B2F5EA,
+    primary3: #81E6D9,
+    primary4: #4FD1C5,
+    primary5: #38B2AC,
+    neutral1: #F7FAFC,
+    neutral2: #EDF2F7,
+    neutral3: #E2E8F0,
+    neutral4: #CBD5E0,
+    lineIconFilter: invert(0%) sepia(0%) saturate(3%) hue-rotate(167deg) brightness(101%) contrast(100%),
+    logoFilter: invert(81%) sepia(62%) saturate(262%) hue-rotate(114deg) brightness(94%) contrast(91%),
+  ),
+  dark: (
+    textColor: #FFFFFF,
+    bgColor: #2D3748,
+    accent1: #4FD1C5,
+    accent2: #4FD1C5,
+    primary1: #553C9A,
+    primary2: #6B46C1,
+    primary3: #805AD5,
+    primary4: #9F7AEA,
+    primary5: #B794F4,
+    neutral1: #1A202C,
+    neutral2: #1A202C,
+    neutral3: #1A202C,
+    neutral4: #4A5568,
+    lineIconFilter: invert(100%) sepia(18%) saturate(802%) hue-rotate(174deg) brightness(100%) contrast(98%),
+    logoFilter: invert(40%) sepia(39%) saturate(1106%) hue-rotate(219deg) brightness(94%) contrast(92%),
+  ),
+);
+
+@mixin themed() {
+  @each $theme, $map in $themes {
+    .theme--#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function t($key) {
+  @return map-get($theme-map, $key);
+}
