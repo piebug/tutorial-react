@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "796124cdf0f7bf0bb31b947f045b177e",
+    "revision": "ab9ef693c892b99ae46a1b370e1efe1f",
     "url": "/tutorial-react/index.html"
   },
   {
-    "revision": "ca833903f8fb351a1536",
+    "revision": "764f96a4fd56ec4c0582",
     "url": "/tutorial-react/static/css/main.1603992d.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/tutorial-react/static/js/2.507031c6.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ca833903f8fb351a1536",
-    "url": "/tutorial-react/static/js/main.3d403089.chunk.js"
+    "revision": "764f96a4fd56ec4c0582",
+    "url": "/tutorial-react/static/js/main.1c3c7858.chunk.js"
   },
   {
     "revision": "682edddca3f6012c4544",
@@ -32,8 +32,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/tutorial-react/static/media/tic-tac-toe.32c0e7d3.svg"
   },
   {
-    "revision": "fa64c08d50fa51a1b596850e90ec082f",
-    "url": "/tutorial-react/static/media/tic-tac.fa64c08d.svg"
+    "revision": "7f407901f1bcc63de49e88156b3c02a8",
+    "url": "/tutorial-react/static/media/tic-tac.7f407901.svg"
   },
   {
     "revision": "043f46d5ae123aa7dda0cedfe733d07e",
