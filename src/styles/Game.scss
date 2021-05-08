@@ -1,0 +1,15 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+@import "node_modules/bootstrap/scss/mixins/_grid-framework";
+@import "node_modules/bootstrap/scss/mixins/_grid";
+@import "node_modules/bootstrap/scss/_grid";
+
+.game {
+  @extend .container-fluid;
+  margin: map-get($spacers, 3);
+
+  @include media-breakpoint-up(md) {
+    // margin: map-get($spacers, 5) 10rem;
+  }  
+}

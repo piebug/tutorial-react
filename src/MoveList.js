@@ -87,9 +87,9 @@ class MoveList extends React.Component {
     }
 
     return (
-      <div>
+      <div className="d-flex flex-column h-100">
         <ol className="moves pl-3">{moves}</ol>
-        <div className="d-flex justify-content-end">
+        <div className="mt-auto">
           <button
             className="btn btn-outline-primary btn-sm btn-subtle border-0 px-1 py-0"
             onClick={() => this.reverseMoves()}

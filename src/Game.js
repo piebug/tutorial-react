@@ -1,6 +1,7 @@
 import React from 'react';
 import Board from "./Board.js"
 import MoveList from "./MoveList.js"
+import './styles/Game.scss';
 
 class Game extends React.Component {
   constructor(props) {
@@ -53,7 +54,7 @@ class Game extends React.Component {
     }
 
     return (
-      <div className="game container-fluid p-md-5 p-3">
+      <div className="game">
         <h1 className="display-2 px-lg-5 py-2">Tic-Tac-Toe</h1>
         <div className="row px-lg-5 py-3">
           <div className="game-board col-12 col-md py-3">

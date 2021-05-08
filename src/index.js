@@ -120,6 +120,5 @@ ReactDOM.render(
 );
 
 /* TODO: my ideas for improvements
- *  - change theme toggle to use a switch
  *  - add collapsible functionality to navbar
  */
