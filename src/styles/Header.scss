@@ -65,6 +65,8 @@ a.navbar-ttt {
 }
 
 .theme-switch {
+  display: flex;
+
   @include themed() {
     .custom-switch { 
       .custom-control-label::before {
@@ -78,20 +80,20 @@ a.navbar-ttt {
 
       .custom-control-input:focus~.custom-control-label::before {
         outline: 0;
-        box-shadow: 0 0 0 .2rem rgba(t('accent2'), .5);
+        box-shadow: 0 0 0 .2rem rgba(t('accent2'), .25);
       }
     }
 
     .custom-control-input:active~.custom-control-label::before{
       background-color: lighten(t('accent1'), 10%);
+      border-color: lighten(t('accent2'), 10%);
     }
 
     .octicon {
       height: 1.5rem;
       width: 1.5rem;
+      margin-right: map-get($spacers, 2);
       fill: lighten(t('accent1'), 10%);
     }
   }
 }
-
-// TODO: breakpoints, responsive sizing for icons
