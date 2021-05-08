@@ -43,27 +43,6 @@ a.navbar-ttt {
   }
 }
 
-.header {
-  padding: map-get($spacers, 2) map-get($spacers, 3);
-
-  @include media-breakpoint-up(md) {
-    padding: map-get($spacers, 3) map-get($spacers, 5);
-  }
-
-  @include media-breakpoint-up(lg) {
-    padding-left: (map-get($spacers, 5) * 1.5);
-    padding-right: (map-get($spacers, 5) * 1.5);
-  }
-
-  .navbar {
-    padding: 0;
-  }
-
-  @include themed() {
-    border-bottom: 1px solid t('neutral3');
-  }
-}
-
 .theme-switch {
   display: flex;
 
@@ -95,5 +74,26 @@ a.navbar-ttt {
       margin-right: map-get($spacers, 2);
       fill: lighten(t('accent1'), 10%);
     }
+  }
+}
+
+.header {
+  padding: map-get($spacers, 2) map-get($spacers, 3);
+
+  @include media-breakpoint-up(md) {
+    padding: map-get($spacers, 3) map-get($spacers, 5);
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-left: (map-get($spacers, 5) * 1.5);
+    padding-right: (map-get($spacers, 5) * 1.5);
+  }
+
+  .navbar {
+    padding: 0;
+  }
+
+  @include themed() {
+    border-bottom: 1px solid t('neutral3');
   }
 }
