@@ -72,7 +72,7 @@ function NavbarIcon(props) {
   return (
     <a
       className="navbar-brand"
-      href="https://github.com/simply-so/tutorial-react"
+      href="https://github.com/pies-n-loaf/tutorial-react"
     >
       <img
         src={tictactoe}
