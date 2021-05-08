@@ -2,7 +2,6 @@
 @import "node_modules/bootstrap/scss/variables";
 @import "node_modules/bootstrap/scss/mixins";
 @import "node_modules/bootstrap/scss/_navbar";
-// @import "node_modules/bootstrap/scss/_utilities";
 
 @import './_colors.scss';
 
@@ -95,4 +94,4 @@ a.navbar-ttt {
   }
 }
 
-// TODO: breakpoints
+// TODO: breakpoints, responsive sizing for icons
