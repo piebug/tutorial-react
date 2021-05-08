@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Game from './Game.js'
+import { MoonIcon, SunIcon } from '@primer/octicons-react';
+import Game from './Game.js';
+import Header from './Header.js';
 import logo from './images/logo.svg';
 import toe from './images/toe.svg';
 import tictac from './images/tic-tac.svg';
-import tictactoe from './images/tic-tac-toe.svg';
 import './styles/index.scss';
 
 function ReactLogo(props) {
@@ -68,42 +69,6 @@ function Footer(props) {
   );
 }
 
-function NavbarIcon(props) {
-  return (
-    <a
-      className="navbar-brand"
-      href="https://github.com/pies-n-loaf/tutorial-react"
-    >
-      <img
-        src={tictactoe}
-        className="tic-tac-toe line-icon d-inline-block align-center mr-2"
-        alt="tic-tac-toe"
-      />
-      <span className="d-none d-md-inline">
-        : a <span className="react-js">reactjs</span> practice app
-      </span>
-    </a>
-  );
-}
-
-function Header(props) {
-  return (
-    <header className="header px-md-5 px-3 py-2">
-      <nav className="navbar navbar-light px-lg-5">
-        <NavbarIcon />
-        <div className="custom-control custom-checkbox">
-          <button
-            className="btn btn-outline-primary btn-sm"
-            onClick={props.onClick}
-          >
-            {props.theme} mode
-          </button>
-        </div>
-      </nav>
-    </header>
-  );
-}
-
 class Page extends React.Component {
   constructor(props) {
     super(props);
@@ -123,6 +88,8 @@ class Page extends React.Component {
       themes.default : themes.dark;
     const themeOption = this.state.isDefaultTheme ?
       themes.dark : themes.default;
+    const themeIcon = this.state.isDefaultTheme ?
+      <MoonIcon /> : <SunIcon />;
 
     return (
       <div className={"theme--" + theme}>
@@ -130,6 +97,7 @@ class Page extends React.Component {
           <Header
             onClick={() => this.handleThemeChange()}
             theme={themeOption}
+            themeIcon={themeIcon}
           />
           <Game />
           <Footer />
@@ -144,7 +112,7 @@ const themes = {
   dark: "dark",
 }
 
-// ========================================
+// ===============================
 
 ReactDOM.render(
   <Page />,

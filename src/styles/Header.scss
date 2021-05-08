@@ -1,0 +1,98 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+@import "node_modules/bootstrap/scss/_navbar";
+// @import "node_modules/bootstrap/scss/_utilities";
+
+@import './_colors.scss';
+
+a.navbar-ttt {
+  @extend .navbar-brand;
+
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1.5em;
+
+  .tic-tac-toe {
+    height: 7vh;
+    display: inline-block;
+    margin-right: map-get($spacers, 2);
+  }
+
+  .navbar-ttt-title {
+    display: none;
+
+    @include media-breakpoint-up(md) {
+      display: inline;
+    }  
+  }
+
+  @include themed() {
+    color: t('textColor');
+
+    .tic-tac-toe {
+      filter: t('lineIconFilter');
+    }
+
+    &:hover {
+      text-decoration: solid underline t('primary2') 3px;
+
+      .tic-tac-toe {
+        filter: t('logoFilter');
+      }
+    }
+  }
+}
+
+.header {
+  padding: map-get($spacers, 2) map-get($spacers, 3);
+
+  @include media-breakpoint-up(md) {
+    padding: map-get($spacers, 3) map-get($spacers, 5);
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-left: (map-get($spacers, 5) * 1.5);
+    padding-right: (map-get($spacers, 5) * 1.5);
+  }
+
+  .navbar {
+    padding: 0;
+  }
+
+  @include themed() {
+    border-bottom: 1px solid t('neutral3');
+  }
+}
+
+.theme-switch {
+  @include themed() {
+    .custom-switch { 
+      .custom-control-label::before {
+        background-color: t('accent1');
+        border-color: t('accent2');
+      }
+
+      .custom-control-label::after {
+        background-color: t('bgColor');
+      }
+
+      .custom-control-input:focus~.custom-control-label::before {
+        outline: 0;
+        box-shadow: 0 0 0 .2rem rgba(t('accent2'), .5);
+      }
+    }
+
+    .custom-control-input:active~.custom-control-label::before{
+      background-color: lighten(t('accent1'), 10%);
+    }
+
+    .octicon {
+      height: 1.5rem;
+      width: 1.5rem;
+      fill: lighten(t('accent1'), 10%);
+    }
+  }
+}
+
+// TODO: breakpoints

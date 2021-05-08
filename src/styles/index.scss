@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Unica+One&family=Open+Sans:wght@300;400;600;700;800&display=swap');
+@import "node_modules/bootstrap/scss/bootstrap";
 @import './_colors.scss';
+
 
 #root {
   -webkit-font-smoothing: antialiased;
@@ -50,25 +52,25 @@
   }
 }
 
-.header {
-  a.navbar-brand {
-    text-decoration: none;
-    font-weight: 800;
-    font-size: 1.5em;
-  }
+// .header {
+//   a.navbar-brand {
+//     text-decoration: none;
+//     font-weight: 800;
+//     font-size: 1.5em;
+//   }
 
-  @include themed() {
-    border-bottom: 1px solid t('neutral3');
+//   @include themed() {
+//     border-bottom: 1px solid t('neutral3');
 
-    a.navbar-brand {
-      color: t('textColor');
+//     a.navbar-brand {
+//       color: t('textColor');
 
-      &:hover {
-        text-decoration: solid underline t('primary2') 3px;
-      }
-    }
-  }
-}
+//       &:hover {
+//         text-decoration: solid underline t('primary2') 3px;
+//       }
+//     }
+//   }
+// }
 
 .footer {
   position: absolute;
@@ -159,12 +161,8 @@ h2.made-by {
 
 .line-icon {
   @include themed() {
-    filter: t('lineIconFilter')
+    filter: t('lineIconFilter');
   }
-}
-
-.tic-tac-toe {
-  height: 7vh;
 }
 
 .tic-tac {
