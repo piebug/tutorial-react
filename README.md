@@ -1,6 +1,6 @@
 # Tutorial: React JS
 
-This project is my implementation of the official [React JS tutorial](https://reactjs.org/tutorial/tutorial.html). This was my first foray into React and will hopefully be a good reference for the future! I might also use it as a React sandbox if I want to practice new techniques later on. 
+This project is my implementation of the official [React JS tutorial](https://reactjs.org/tutorial/tutorial.html). This was my first foray into React and will hopefully be a good reference for the future 💃. I might also use it as a React sandbox if I want to practice new techniques later on. 
 
 ## Setup
 
