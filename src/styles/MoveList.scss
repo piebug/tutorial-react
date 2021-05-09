@@ -44,6 +44,10 @@ ol.moves {
     display: flex;
     flex-direction: column;
     height: 85%;
+
+    button {
+      align-self: flex-end;
+    }
   }
 
   .moves {
