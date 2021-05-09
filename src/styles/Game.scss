@@ -16,7 +16,7 @@
     padding: map-get($spacers, 5);
 
     .game-board {
-      margin-right: map-get($spacers, 5);
+      margin-right: (map-get($spacers, 5) * 1.5);
     }
     .game-board,
     .game-info {
