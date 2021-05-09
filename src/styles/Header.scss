@@ -8,7 +8,12 @@
 
 
 .tic-tac-toe {
-  height: 7vh;
+  // height: 7vh;
+  height: 3rem;
+
+  @include media-breakpoint-up(md) {
+    height: 4rem;
+  }
 }
 
 a.navbar-ttt {

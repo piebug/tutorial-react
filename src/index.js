@@ -57,8 +57,6 @@ ReactDOM.render(
 );
 
 /* TODO: my ideas for improvements
+ *  - write tests
  *  - add collapsible functionality to navbar
- *  - consistent breakpoints for each component
- *  - responsively resizing icons
- *  - eliminate as much bootstrap heft as possible
  */

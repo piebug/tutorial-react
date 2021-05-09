@@ -7,7 +7,7 @@ import './styles/Footer.scss';
 function ReactLogo(props) {
   return (
     <div className="react-logo">
-      <img src={logo} className="logo" alt="ReactJS logo" />
+      <img src={logo} className="logo" alt="ReactJS logo" title="ReactJS" />
       <p>
         <a href="https://reactjs.org/" className="react-home">React</a>
       </p>
@@ -18,8 +18,8 @@ function ReactLogo(props) {
 function PillToeIcons(props) {
   return (
     <div className="pill-toe-icons">
-      <img src={tictac} className="tic-tac line-icon" alt="tic-tac" />
-      <img src={toe} className="toe line-icon" alt="toe" />
+      <img src={tictac} className="tic-tac line-icon" alt="tic-tac" title="Tic-Tac" />
+      <img src={toe} className="toe line-icon" alt="toe" title="Toe" />
     </div>
   );
 }

@@ -9,7 +9,7 @@
   text-align: center;
 
   .logo {
-    height: 10vh;
+    height: 5rem;
     pointer-events: none;
 
     @include themed() {
@@ -32,22 +32,34 @@
       transform: rotate(360deg);
     }
   }
+
+  @include media-breakpoint-up(md) {
+
+  }
 }
 
 .pill-toe-icons {
   text-align: center;
 
-  @include media-breakpoint-up(md) {
-    text-align: left;
-  } 
-
   .tic-tac {
-    height: 8vh;
+    height: 3rem;
   }
   
   .toe {
-    height: 10vh;
+    height: 3.75rem;
   }
+
+  @include media-breakpoint-up(md) {
+    text-align: left;
+
+    .tic-tac {
+      height: 4rem;
+    }
+    
+    .toe {
+      height: 5rem;
+    }
+  } 
 }
 
 h2.made-by {
@@ -73,7 +85,7 @@ h2.made-by {
   }
 
   .react-logo {
-    margin-top: map-get($spacers, 3);
+    margin-top: map-get($spacers, 5);
 
     @include media-breakpoint-up(md) {
       margin: 0;

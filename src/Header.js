@@ -13,6 +13,7 @@ function NavbarTicTacToe(props) {
         src={tictactoe}
         className="tic-tac-toe line-icon"
         alt="tic-tac-toe"
+        title="GitHub project repository"
       />
       <span className="navbar-ttt-title">
         : a <span className="react-js">reactjs</span> practice app
