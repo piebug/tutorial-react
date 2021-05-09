@@ -1,0 +1,67 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+@import './_colors.scss';
+
+
+.tic-tac {
+  height: 8vh;
+}
+
+.toe {
+  height: 10vh;
+}
+
+/* Logo animation CSS */
+.logo {
+  height: 10vh;
+  pointer-events: none;
+
+  @include themed() {
+    filter: t('logoFilter')
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 48vh;
+
+  a.react-home {
+    @include react-color;
+    font-weight: 800;
+    font-size: 1.25em;
+    text-decoration: none !important;
+  }
+
+  @include themed() {
+    background-color: t('neutral1');
+
+    a.react-home:hover {
+      text-decoration: solid underline t('primary3') 3px !important;
+    }
+  }
+}
+
+h2.made-by {
+  font-size: 1.25rem;
+  margin-bottom: 0;
+  padding-bottom: map-get($spacers, 1);
+}
