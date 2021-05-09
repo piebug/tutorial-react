@@ -6,7 +6,7 @@ import './styles/Footer.scss';
 
 function ReactLogo(props) {
   return (
-    <div className="text-center">
+    <div className="react-logo">
       <img src={logo} className="logo" alt="ReactJS logo" />
       <p>
         <a href="https://reactjs.org/" className="react-home">React</a>
@@ -17,7 +17,7 @@ function ReactLogo(props) {
 
 function PillToeIcons(props) {
   return (
-    <div>
+    <div className="pill-toe-icons">
       <img src={tictac} className="tic-tac line-icon" alt="tic-tac" />
       <img src={toe} className="toe line-icon" alt="toe" />
     </div>
@@ -46,21 +46,13 @@ function MadeBy(props) {
 
 function Footer(props) {
   return (
-    <footer className="footer px-md-5 px-3 py-3">
-      <div className="container-fluid px-lg-5">
-        <div className="d-md-flex justify-content-between align-items-top mt-4">
-          <div>
-            <MadeBy />
-            <IconsAttribute />
-            <div className="text-center text-md-left">
-              <PillToeIcons />
-            </div>
-          </div>
-          <div className="mt-3 mt-md-0">
-            <ReactLogo />
-          </div>
-        </div>
+    <footer className="footer">
+      <div>
+        <MadeBy />
+        <IconsAttribute />
+        <PillToeIcons />
       </div>
+      <ReactLogo />
     </footer>
   );
 }

@@ -5,44 +5,80 @@
 @import './_colors.scss';
 
 
-.tic-tac {
-  height: 8vh;
-}
+.react-logo {
+  text-align: center;
 
-.toe {
-  height: 10vh;
-}
-
-/* Logo animation CSS */
-.logo {
-  height: 10vh;
-  pointer-events: none;
-
-  @include themed() {
-    filter: t('logoFilter')
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
   .logo {
-    animation: logo-spin infinite 20s linear;
+    height: 10vh;
+    pointer-events: none;
+
+    @include themed() {
+      filter: t('logoFilter')
+    }
+  }
+
+  // Logo animation CSS
+  @media (prefers-reduced-motion: no-preference) {
+    .logo {
+      animation: logo-spin infinite 20s linear;
+    }
+  }
+
+  @keyframes logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.pill-toe-icons {
+  text-align: center;
+
+  @include media-breakpoint-up(md) {
+    text-align: left;
+  } 
+
+  .tic-tac {
+    height: 8vh;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .toe {
+    height: 10vh;
   }
+}
+
+h2.made-by {
+  font-size: 1.25rem;
+  margin-bottom: 0;
+  padding-bottom: map-get($spacers, 1);
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
   width: 100%;
-  height: 48vh;
+  padding: map-get($spacers, 5) map-get($spacers, 3);
+
+  @include media-breakpoint-up(md) {
+    padding: map-get($spacers, 5);
+    display: inline-flex;
+    justify-content: space-between;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-top: (map-get($spacers, 5) * 1.5);
+    padding-left: (map-get($spacers, 5) * 1.5);
+    padding-right: (map-get($spacers, 5) * 1.5);
+  }
+
+  .react-logo {
+    margin-top: map-get($spacers, 3);
+
+    @include media-breakpoint-up(md) {
+      margin: 0;
+    }
+  }
 
   a.react-home {
     @include react-color;
@@ -58,10 +94,4 @@
       text-decoration: solid underline t('primary3') 3px !important;
     }
   }
-}
-
-h2.made-by {
-  font-size: 1.25rem;
-  margin-bottom: 0;
-  padding-bottom: map-get($spacers, 1);
 }
