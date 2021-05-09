@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/tutorial-react/static/css/main.1603992d.chunk.css",
-    "main.js": "/tutorial-react/static/js/main.1c3c7858.chunk.js",
-    "main.js.map": "/tutorial-react/static/js/main.1c3c7858.chunk.js.map",
+    "main.css": "/tutorial-react/static/css/main.5a59c9c0.chunk.css",
+    "main.js": "/tutorial-react/static/js/main.960097ae.chunk.js",
+    "main.js.map": "/tutorial-react/static/js/main.960097ae.chunk.js.map",
     "runtime-main.js": "/tutorial-react/static/js/runtime-main.4b9bd8d2.js",
     "runtime-main.js.map": "/tutorial-react/static/js/runtime-main.4b9bd8d2.js.map",
-    "static/js/2.507031c6.chunk.js": "/tutorial-react/static/js/2.507031c6.chunk.js",
-    "static/js/2.507031c6.chunk.js.map": "/tutorial-react/static/js/2.507031c6.chunk.js.map",
+    "static/js/2.546854e8.chunk.js": "/tutorial-react/static/js/2.546854e8.chunk.js",
+    "static/js/2.546854e8.chunk.js.map": "/tutorial-react/static/js/2.546854e8.chunk.js.map",
     "index.html": "/tutorial-react/index.html",
-    "precache-manifest.ee3059919b237dde7267121267caaa92.js": "/tutorial-react/precache-manifest.ee3059919b237dde7267121267caaa92.js",
+    "precache-manifest.a6bfcd4764ec4814e1596b51fee251a9.js": "/tutorial-react/precache-manifest.a6bfcd4764ec4814e1596b51fee251a9.js",
     "service-worker.js": "/tutorial-react/service-worker.js",
-    "static/css/main.1603992d.chunk.css.map": "/tutorial-react/static/css/main.1603992d.chunk.css.map",
-    "static/js/2.507031c6.chunk.js.LICENSE.txt": "/tutorial-react/static/js/2.507031c6.chunk.js.LICENSE.txt",
+    "static/css/main.5a59c9c0.chunk.css.map": "/tutorial-react/static/css/main.5a59c9c0.chunk.css.map",
+    "static/js/2.546854e8.chunk.js.LICENSE.txt": "/tutorial-react/static/js/2.546854e8.chunk.js.LICENSE.txt",
     "static/media/logo.svg": "/tutorial-react/static/media/logo.021a9316.svg",
     "static/media/tic-tac-toe.svg": "/tutorial-react/static/media/tic-tac-toe.32c0e7d3.svg",
     "static/media/tic-tac.svg": "/tutorial-react/static/media/tic-tac.7f407901.svg",
@@ -19,8 +19,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.4b9bd8d2.js",
-    "static/js/2.507031c6.chunk.js",
-    "static/css/main.1603992d.chunk.css",
-    "static/js/main.1c3c7858.chunk.js"
+    "static/js/2.546854e8.chunk.js",
+    "static/css/main.5a59c9c0.chunk.css",
+    "static/js/main.960097ae.chunk.js"
   ]
 }
