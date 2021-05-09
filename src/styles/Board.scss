@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 @import './_colors.scss';
 
+
 .board-row:after {
   clear: both;
   content: "";
@@ -29,6 +30,10 @@
 
   &:focus {
     outline: none;
+
+    @include themed() {
+      background-color: t('neutral1');
+    }
   }
   
   &.winner {
