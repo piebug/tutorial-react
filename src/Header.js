@@ -11,7 +11,7 @@ function NavbarTicTacToe(props) {
     >
       <img
         src={tictactoe}
-        className="tic-tac-toe"
+        className="tic-tac-toe line-icon"
         alt="tic-tac-toe"
       />
       <span className="navbar-ttt-title">

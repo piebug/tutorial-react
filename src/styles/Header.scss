@@ -5,6 +5,10 @@
 @import "node_modules/bootstrap/scss/_custom-forms";
 @import './_colors.scss';
 
+.tic-tac-toe {
+  height: 7vh;
+}
+
 a.navbar-ttt {
   @extend .navbar-brand;
 
@@ -13,7 +17,6 @@ a.navbar-ttt {
   font-size: 1.5em;
 
   .tic-tac-toe {
-    height: 7vh;
     display: inline-block;
     margin-right: map-get($spacers, 2);
   }
@@ -27,10 +30,6 @@ a.navbar-ttt {
   }
 
   @include themed() {
-    .tic-tac-toe {
-      filter: t('lineIconFilter');
-    }
-
     &:hover {
       text-decoration: solid underline t('primary2') 3px !important;
 
