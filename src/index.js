@@ -56,7 +56,6 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-/* TODO: my ideas for improvements
+/* TODO: ideas for improvements
  *  - write tests
- *  - add collapsible functionality to navbar
  */
