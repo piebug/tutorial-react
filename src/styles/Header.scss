@@ -27,8 +27,6 @@ a.navbar-ttt {
   }
 
   @include themed() {
-    color: t('textColor');
-
     .tic-tac-toe {
       filter: t('lineIconFilter');
     }
