@@ -1,5 +1,6 @@
 @import './_colors.scss';
 
+
 .move.current {
   font-weight: bold;
 }
@@ -11,6 +12,7 @@
 ol.moves {
   list-style: none;
   counter-reset: li;
+  padding-left: 1rem;
 
   & > li::before {
     content: counter(li);
@@ -29,9 +31,16 @@ ol.moves {
 
   & > li {
     counter-increment: li;
+    margin-bottom: .5rem;
   }
 }
 
-.moves-sort {
-  margin-top: auto;
+.move-list {
+  display: flex;
+  flex-direction: column;
+  height: 85%;
+}
+
+.moves {
+  flex: 1;
 }
