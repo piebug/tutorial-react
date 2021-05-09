@@ -1,15 +1,32 @@
 @import "node_modules/bootstrap/scss/functions";
 @import "node_modules/bootstrap/scss/variables";
 @import "node_modules/bootstrap/scss/mixins/_breakpoints";
-@import "node_modules/bootstrap/scss/mixins/_grid-framework";
-@import "node_modules/bootstrap/scss/mixins/_grid";
-@import "node_modules/bootstrap/scss/_grid";
+
 
 .game {
-  @extend .container-fluid;
-  margin: map-get($spacers, 3);
+  padding: map-get($spacers, 3);
+
+  .game-board,
+  .game-info {
+    padding-top: map-get($spacers, 2);
+    padding-bottom: map-get($spacers, 2);
+  }
 
   @include media-breakpoint-up(md) {
-    // margin: map-get($spacers, 5) 10rem;
-  }  
+    padding: map-get($spacers, 5);
+
+    .game-board {
+      margin-right: map-get($spacers, 5);
+    }
+    .game-board,
+    .game-info {
+      padding-top: map-get($spacers, 3);
+      padding-bottom: map-get($spacers, 3);
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-left: (map-get($spacers, 5) * 1.5);
+    padding-right: (map-get($spacers, 5) * 1.5);
+  }
 }

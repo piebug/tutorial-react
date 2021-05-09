@@ -3,6 +3,29 @@ import Board from "./Board.js"
 import MoveList from "./MoveList.js"
 import './styles/Game.scss';
 
+function calculateWinner(squares) {
+  const lines = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ];
+  for (let i = 0; i < lines.length; i++) {
+    const [a, b, c] = lines[i];
+    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+      return {
+        player: squares[a],
+        move: lines[i],
+      };
+    }
+  }
+  return null;
+}
+
 class Game extends React.Component {
   constructor(props) {
     super(props);
@@ -55,17 +78,17 @@ class Game extends React.Component {
 
     return (
       <div className="game">
-        <h1 className="display-2 px-lg-5 py-2">Tic-Tac-Toe</h1>
-        <div className="row px-lg-5 py-3">
-          <div className="game-board col-12 col-md py-3">
-            <h2 className="status">{status}</h2>
+        <h1>Tic-Tac-Toe</h1>
+        <div className="row">
+          <div className="game-board col-12 col-md-auto">
+            <h2>{status}</h2>
             <Board
               squares={current.squares}
               winningSquares={winner ? winner.move : null}
               onClick={(i) => this.handleClick(i)}
             />
           </div>
-          <div className="game-info col-12 col-md py-3">
+          <div className="game-info col-12 col-md-auto">
             <h2>Moves</h2>
             <MoveList
               history={this.state.history}
@@ -80,28 +103,3 @@ class Game extends React.Component {
 }
 
 export default Game;
-
-// Helper functions
-
-function calculateWinner(squares) {
-  const lines = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6],
-  ];
-  for (let i = 0; i < lines.length; i++) {
-    const [a, b, c] = lines[i];
-    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      return {
-        player: squares[a],
-        move: lines[i],
-      };
-    }
-  }
-  return null;
-}
