@@ -80,7 +80,7 @@ class Game extends React.Component {
       <div className="game">
         <h1>Tic-Tac-Toe</h1>
         <div className="row">
-          <div className="game-board col-12 col-md-auto">
+          <div className="game-board col-12 col-md">
             <h2>{status}</h2>
             <Board
               squares={current.squares}
@@ -88,7 +88,7 @@ class Game extends React.Component {
               onClick={(i) => this.handleClick(i)}
             />
           </div>
-          <div className="game-info col-12 col-md-auto">
+          <div className="game-info col-12 col-md">
             <h2>Moves</h2>
             <MoveList
               history={this.state.history}

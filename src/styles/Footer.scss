@@ -1,8 +1,5 @@
-@import "node_modules/bootstrap/scss/functions";
-@import "node_modules/bootstrap/scss/variables";
-@import "node_modules/bootstrap/scss/mixins/_breakpoints";
-
 @import './_colors.scss';
+@import './_spacing.scss';
 
 
 .react-logo {
@@ -32,10 +29,6 @@
       transform: rotate(360deg);
     }
   }
-
-  @include media-breakpoint-up(md) {
-
-  }
 }
 
 .pill-toe-icons {
@@ -51,14 +44,6 @@
 
   @include media-breakpoint-up(md) {
     text-align: left;
-
-    .tic-tac {
-      height: 4rem;
-    }
-    
-    .toe {
-      height: 5rem;
-    }
   } 
 }
 
@@ -70,18 +55,12 @@ h2.made-by {
 
 .footer {
   width: 100%;
-  padding: map-get($spacers, 5) map-get($spacers, 3);
+
+  @include app-spacing("footer");
 
   @include media-breakpoint-up(md) {
-    padding: map-get($spacers, 5);
     display: inline-flex;
     justify-content: space-between;
-  }
-
-  @include media-breakpoint-up(lg) {
-    padding-top: (map-get($spacers, 5) * 1.5);
-    padding-left: (map-get($spacers, 5) * 1.5);
-    padding-right: (map-get($spacers, 5) * 1.5);
   }
 
   .react-logo {

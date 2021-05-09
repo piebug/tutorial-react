@@ -5,15 +5,11 @@
 @import "node_modules/bootstrap/scss/_custom-forms";
 
 @import './_colors.scss';
+@import './_spacing.scss';
 
 
 .tic-tac-toe {
-  // height: 7vh;
   height: 3rem;
-
-  @include media-breakpoint-up(md) {
-    height: 4rem;
-  }
 }
 
 a.navbar-ttt {
@@ -82,16 +78,7 @@ a.navbar-ttt {
 }
 
 .header {
-  padding: map-get($spacers, 2) map-get($spacers, 3);
-
-  @include media-breakpoint-up(md) {
-    padding: map-get($spacers, 3) map-get($spacers, 5);
-  }
-
-  @include media-breakpoint-up(lg) {
-    padding-left: (map-get($spacers, 5) * 1.5);
-    padding-right: (map-get($spacers, 5) * 1.5);
-  }
+  @include app-spacing("header");
 
   .navbar {
     padding: 0;
