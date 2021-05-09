@@ -58,4 +58,5 @@ ReactDOM.render(
 
 /* TODO: ideas for improvements
  *  - write tests
+ *  - containerize
  */
