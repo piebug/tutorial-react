@@ -30,7 +30,7 @@ class Page extends React.Component {
 
     return (
       <div className={"theme--" + theme}>
-        <div className="page">
+        <div className="page container-fluid">
           <Header
             onClick={() => this.handleThemeChange()}
             theme={themeOption}
