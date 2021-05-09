@@ -26,7 +26,7 @@ function Header(props) {
     <header className="header">
       <nav className="navbar navbar-light">
         <NavbarTicTacToe />
-        <div class="theme-switch">
+        <div className="theme-switch">
           {props.themeIcon}
           <Form.Switch 
             id="themeSwitch"
