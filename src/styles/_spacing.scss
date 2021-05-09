@@ -5,7 +5,7 @@
 
 $large-breakpoints: (
   xxl: 1400px,
-  xxxl: 1600px,
+  xxxl: 1800px,
 );
 $breakpoints: map-merge($grid-breakpoints, $large-breakpoints);
 
@@ -25,7 +25,7 @@ $sections: (
   ),
   "game": (
     "default-x": map-get($spacers, 3),
-    "default-y": map-get($spacers, 3),
+    "default-y": map-get($spacers, 5),
     "breakpoints": (
       md: (
         "x": map-get($spacers, 5),
@@ -35,13 +35,13 @@ $sections: (
         "x": (map-get($spacers, 5) * 5),
       ),
       xl: (
-        "x": (map-get($spacers, 5) * 6),
+        "x": (map-get($spacers, 5) * 7),
       ),
       xxl: (
-        "x": (map-get($spacers, 5) * 8),
+        "x": (map-get($spacers, 5) * 9),
       ),
       xxxl: (
-        "x": (map-get($spacers, 5) * 10),
+        "x": (map-get($spacers, 5) * 14),
       ),
     ),
   ),
@@ -57,13 +57,13 @@ $sections: (
         "x": (map-get($spacers, 5) * 5),
       ),
       xl: (
-        "x": (map-get($spacers, 5) * 6),
+        "x": (map-get($spacers, 5) * 7),
       ),
       xxl: (
-        "x": (map-get($spacers, 5) * 8),
+        "x": (map-get($spacers, 5) * 9),
       ),
       xxxl: (
-        "x": (map-get($spacers, 5) * 10),
+        "x": (map-get($spacers, 5) * 14),
       ),
     ),
   ),
