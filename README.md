@@ -4,6 +4,8 @@ This project is my implementation of the official [React JS tutorial](https://re
 
 This was my first foray into React and will hopefully be a good reference for the future 🐱‍💻 - although some of the code written here is already considered outdated! I will most likely also use this project as a React sandbox for practicing new techniques later on. 
 
+Additionally, I implemented [Katie McTigue's method for creating a dark mode](https://medium.com/@katiemctigue/how-to-create-a-dark-mode-in-sass-609f131a3995) as a way of practicing Sass. Her guide was really well-written and super easy to follow, and I had a blast fiddling with all the things.
+
 ## Setup
 
 ### Create React App
