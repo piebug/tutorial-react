@@ -1,6 +1,8 @@
 # Tutorial: React JS
 
-This project is my implementation of the official [React JS tutorial](https://reactjs.org/tutorial/tutorial.html). This was my first foray into React and will hopefully be a good reference for the future 🐱‍💻. I might also use it as a React sandbox if I want to practice new techniques later on. 
+This project is my implementation of the official [React JS tutorial](https://reactjs.org/tutorial/tutorial.html). The goal was to build a solitary Tic-Tac-Toe game that displays a record of each move in an interactive list. It does nothing and means nothing, but it sure is cute.
+
+This was my first foray into React and will hopefully be a good reference for the future 🐱‍💻 - although some of the code written here is already considered outdated! I will most likely also use this project as a React sandbox for practicing new techniques later on. 
 
 ## Setup
 
